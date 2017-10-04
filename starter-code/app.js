@@ -1,18 +1,16 @@
-//Did you use npm install to
-//add all these packages
-//to our project?
+// - import express -
 var express = require('express');
+// - use express as app variable -
 var app = express();
+// - import body-parser - 
 var bodyParser = require('body-parser');
-
-// How do we 'require' the candyRouter file?
+// - import candyRouter -
 var candyRouter = require('./candyRouter.js');
 
+// - body parser middleware -
 app.use(bodyParser.json());
-//How do we redirect the /candies path
-//through our candyRouter?
-//Hint: you need app.use
-
+// - candies middleware using candyRouter- 
 app.use('/candies', candyRouter);
 
+// - listen on port 3000 -
 app.listen(3000);
